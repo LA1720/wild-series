@@ -17,17 +17,18 @@ class ProgramController extends AbstractController  //here it's my first class e
 
     public function index(): Response  //c'est un objet qui représente une réponse HTTP complète. //
     {
-         // To write html inside the methon index()//
+         // To write html inside the method index()//
 
         // return new Response(
         //     '<html><body>Wild Series Index</body></html>'
         // ); 
 
 
-        //make the view program/index.html.twig in templats 
+        //make the view program/index.html.twig in templates 
         return $this->render('program/index.html.twig', [
 
             'website' => 'wild series',
+            'wild' => 'code school'
 
         ]);
 

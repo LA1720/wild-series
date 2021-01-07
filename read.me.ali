@@ -1,0 +1,53 @@
+.env.local
+run: composer install ou update
+run: symfony serve 
+
+if webpack already not installed run: composer require encore
+                                {% block stylesheets %}
+                                    {{ encore_entry_link_tags('app') }}
+                                {% endblock %}
+
+                                {% block javascripts %}
+                                    {{ encore_entry_script_tags('app') }}
+                                {% endblock %}
+
+Pour assets / image =>         Uncomment .enableSassLoader() in webpack.config.js
+                                                    ADD
+                                <img src="{{ asset('build/path_to_image.png') }}" alt=""/>
+                                                    run:
+                                yarn add sass-loader@^9.0.1 node-sass@^4.0.0 --dev
+                                                    RENAME
+                                app.css to app.scss (inside the file app.js too)
+
+For Bootstrap                                       Run:
+                                            yarn add bootstrap --dev
+                                            and
+                                            yarn add jquery popper.js --dev
+
+                                            Create assets/styles/global.scss
+                                                ADD color veriables
+                                            $primary: darken(#428bca, 20%);
+                                            
+                                                 In style / app/scss
+                                                        ADD
+                                            @import "~bootstrap/scss/bootstrap";}
+
+                                           
+
+                                                    In app.js 
+                                                        ADD
+
+                                            const $ = require('jquery');
+                                            // this "modifies" the jquery module: adding behavior to it
+                                            // the bootstrap module doesn't export/return anything
+                                            require('bootstrap');
+                
+                                            $(document).ready(function() {
+                                                $('[data-toggle="popover"]').popover();
+                                            });
+
+
+
+
+run: yarn install
+run: yarn encore dev --watch
