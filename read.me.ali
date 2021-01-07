@@ -51,3 +51,6 @@ For Bootstrap                                       Run:
 
 run: yarn install
 run: yarn encore dev --watch
+
+To ADD an Favicon add in base.html.twig in head <link rel="icon" href="" />
+
