@@ -46,9 +46,6 @@ For Bootstrap                                       Run:
                                                 $('[data-toggle="popover"]').popover();
                                             });
 
-
-
-
 run: yarn install
 run: yarn encore dev --watch
 
